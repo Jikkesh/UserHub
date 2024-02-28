@@ -1,0 +1,48 @@
+.table-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+table{
+    height: max-content;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+.spinner{
+    margin-top: 50px;
+}
+.icon{
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.action-btn-box{
+display: flex;
+gap: 10px;
+}
+
+.search-box{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px; 
+
+}
+
+.search-btn{
+    height: 40px;
+    margin-top: 10px;
+}
+
+.search-container{
+    height: max-content;
+    width: 100%;
+    display: flex;
+}

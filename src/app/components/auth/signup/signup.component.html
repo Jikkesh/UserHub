@@ -1,0 +1,41 @@
+<div class="login-container">
+
+        <div class="login-box">
+          <div>
+              <h2> Signup </h2>
+          </div>
+           
+          <div>  
+             <form [formGroup] = "formData" class="form" (ngSubmit) = "onSubmit()">
+                  <mat-form-field appearance="fill">
+                          <mat-label>Enter your email</mat-label>
+                          <input matInput placeholder="pat@example.com" formControlName="email" >
+                          <mat-error *ngIf="invalidEmail()"> {{checkEmailValid()}} </mat-error>
+                  </mat-form-field>
+      
+                  <mat-form-field appearance="fill">
+                          <mat-label>Enter your password</mat-label>
+                          <input matInput [type]="hide_pass ? 'password' : 'text'" formControlName="password">
+                          <button type="button" mat-icon-button matSuffix (click)="hide_pass = !hide_pass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide_pass">
+                          <mat-icon>{{hide_pass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </button>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                        <mat-label>Confirm password</mat-label>
+                        <input matInput [type]="hide_con_pass ? 'password' : 'text'" formControlName="confirm_password">
+                        <button type="button" mat-icon-button matSuffix (click)="hide_con_pass = !hide_con_pass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide_con_pass">
+                        <mat-icon>{{hide_con_pass ? 'visibility_off' : 'visibility'}} </mat-icon>
+                        </button>
+                </mat-form-field>
+                
+                  <button mat-raised-button type="submit">Submit</button>
+            </form>
+            
+             <br>
+      
+             <h3>If old user, <a routerLink = "/login" (click) = "handleLoginClick()"> Login </a></h3>
+          </div>
+        </div>
+      
+      </div>

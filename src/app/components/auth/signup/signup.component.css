@@ -1,0 +1,23 @@
+.form{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-box{
+     height: max-content;
+     width: 500px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+  }
+  
+  .login-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  }
+  

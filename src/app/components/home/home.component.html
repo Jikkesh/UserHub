@@ -1,0 +1,24 @@
+
+<div class="home-container">   
+
+<div>   
+  <router-outlet></router-outlet>
+</div>
+
+<div class="name-box" *ngIf = "userToggle == false">   
+    
+<mat-spinner *ngIf = "loader" class="spinner"></mat-spinner> 
+
+<mat-selection-list [multiple]="false" class="name-list">
+
+    <mat-list-option *ngFor="let name of nameList" [value]="name.name" (click) = "handleClick(name.id)" >
+
+    <h2> {{name.name}}  </h2>
+
+    </mat-list-option>
+
+</mat-selection-list>
+
+</div>
+
+</div>

@@ -1,0 +1,82 @@
+<div class="table-container">
+
+  <mat-spinner *ngIf="loader" class="spinner"></mat-spinner>
+
+  <div class="search-container">
+
+    <form>
+      <div class="search-box">
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="Ex. India" [(ngModel)]="value" name="country">
+        </mat-form-field>
+
+        <button mat-raised-button (click)="handleSearch()" class="search-btn">Search</button>
+      </div>
+    </form>
+
+  </div>
+  <h2> Total:  {{totalUsers}} </h2>  
+ 
+
+  <table mat-table [dataSource]="userData" class="mat-elevation-z8" *ngIf="loader === false">
+
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First Name: </th>
+      <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef> Second Name: </th>
+      <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell *matHeaderCellDef> Phone: </th>
+      <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email: </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef> Country: </th>
+      <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef> </th>
+
+      <td mat-cell *matCellDef="let element">
+        <div class="action-btn-box">
+          <button mat-fab color="warn" class="icon" *ngIf="deleteToggle" (click)="handleDelete(element.user_id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          <button mat-mini-fab color="accent" class="icon" *ngIf="editToggle" (click)="handleEdit(element)">
+
+            <mat-icon>plus_one</mat-icon>
+          </button>
+
+        </div>
+
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"> </tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="50" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 50]" aria-label="Select page" #pagination
+    (page)="handleEvent($event)" *ngIf="loader === false">
+  </mat-paginator>
+
+</div>

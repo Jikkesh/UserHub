@@ -1,0 +1,21 @@
+.header-box{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 20px 10px 20px
+}
+
+.btn-row{
+    display: flex;
+    height: 40px;
+    gap: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.nav-bar{
+    display: flex;
+    gap: 50px;
+}

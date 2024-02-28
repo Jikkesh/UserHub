@@ -1,0 +1,10 @@
+<div class="user-container">  
+
+        <mat-list role="list">
+                <mat-list-item role="listitem">Name: {{userData.first_name + " " + userData.last_name}} </mat-list-item>
+                <mat-list-item role="listitem">Phone:  {{userData.phone}}</mat-list-item>
+                <mat-list-item role="listitem">Email:  {{userData.email}}</mat-list-item>
+                <mat-list-item role="listitem">Country:  {{userData.country}}</mat-list-item>
+        </mat-list>
+    <button (click) = "handleBack()"> Back  </button>  
+</div>
