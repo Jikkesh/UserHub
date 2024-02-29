@@ -4,7 +4,7 @@
 
   <div class="search-container">
 
-    <form>
+    <form *ngIf="!loader">
       <div class="search-box">
 
         <mat-form-field class="example-full-width" appearance="fill">
@@ -17,7 +17,7 @@
     </form>
 
   </div>
-  <h2> Total:  {{totalUsers}} </h2>  
+  <h2 *ngIf="!loader"> Total:  {{totalUsers}} </h2>  
  
 
   <table mat-table [dataSource]="userData" class="mat-elevation-z8" *ngIf="loader === false">

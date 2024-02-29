@@ -18,7 +18,6 @@ pathMatch : 'full'},
 component: HomeComponent, 
 canActivate : [SaveGuard],
 canActivateChild : [SaveGuard],
-loadChildren : () => import('./components/user/user.module').then(m => m.default),
 },
 
 { path: 'dashboard', 
