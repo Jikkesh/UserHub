@@ -1,23 +1,55 @@
-
 <div class="home-container">   
-
-<div>   
-  <router-outlet></router-outlet>
-</div>
 
 <div class="name-box" *ngIf = "userToggle == false">   
     
 <mat-spinner *ngIf = "loader" class="spinner"></mat-spinner> 
 
-<mat-selection-list [multiple]="false" class="name-list">
+<mat-list>
+  <mat-list-item *ngFor="let name of nameList" class="name-list" >
+    <div class="example-ripple-container mat-elevation-z4"
+      matRipple
+      [matRippleCentered]="centered"
+      [matRippleDisabled]="disabled"
+      [matRippleUnbounded]="unbounded"
+      [matRippleRadius]="radius"
+      [matRippleColor]="color">   
 
-    <mat-list-option *ngFor="let name of nameList" [value]="name.name" (click) = "handleClick(name.id)" >
 
-    <h2> {{name.name}}  </h2>
+      <mat-accordion 
+      class="example-headers-align" 
+      multi 
+      (click) = "handleAcc(name.id)"
+      > 
+    <mat-expansion-panel hideToggle class="pannel"
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+    >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              {{name.name}} 
+          </mat-panel-title>
+          <mat-panel-description>
+          <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-    </mat-list-option>
+        <mat-card class="example-card" *ngIf = "panelOpenState"  >
+            <mat-card-title-group>
+              <mat-card-title >{{user.country}}</mat-card-title>
+              <mat-card-subtitle >{{user.email}}</mat-card-subtitle>
+            </mat-card-title-group>
+            <mat-card-content >
+              {{user.phone}}
+            </mat-card-content>
+        </mat-card>
 
-</mat-selection-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+   </div>
+
+  </mat-list-item>
+</mat-list>
+
 
 </div>
 

@@ -48,12 +48,12 @@ export class UserDataInterceptor implements HttpInterceptor {
           if (result instanceof HttpResponse) {
 
             if (result.url.includes("/Login")) {
+              
               if (result.status == 200) {
                 localStorage.setItem("token", result["body"].webToken)
-                console.log(result.body["message"])
               }
               else if (result.status == 400) {
-                console.log("Bad Request")
+                
               }
             }
 
