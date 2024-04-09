@@ -41,14 +41,13 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(){
-   
+
     this.signupData = this.formData.value
-    console.log(this.signupData)
 
    if(this.signupData.password !== this.signupData.confirm_password){ 
      alert("Password Mismatch");  
 
-   } else {
+   }else {
 
       this.userData = {
         email : this.signupData.email,

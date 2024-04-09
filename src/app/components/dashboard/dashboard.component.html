@@ -2,23 +2,28 @@
 
   <mat-spinner *ngIf="loader" class="spinner"></mat-spinner>
 
-  <div class="search-container">
+  <div class="field">
 
-    <form>
-      <div class="search-box">
+    <div class="search-container">
+      <form>
+        <div class="search-box">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Ex. India" [(ngModel)]="value" name="country">
+          </mat-form-field>
 
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Search</mat-label>
-          <input matInput placeholder="Ex. India" [(ngModel)]="value" name="country">
-        </mat-form-field>
+          <button mat-raised-button (click)="handleSearch()" class="search-btn">Search</button>
+        </div>
+      </form>
+    </div>
 
-        <button mat-raised-button (click)="handleSearch()" class="search-btn">Search</button>
-      </div>
-    </form>
+    <div class="btn-row">
+      <button mat-raised-button color="primary" (click)="onAdd()">Add</button>
+      <button mat-raised-button color="accent" (click)="onEdit()">Edit</button>
+      <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+    </div>
 
   </div>
-  <h2> Total:  {{totalUsers}} </h2>  
- 
 
   <table mat-table [dataSource]="userData" class="mat-elevation-z8" *ngIf="loader === false">
 
@@ -64,9 +69,7 @@
 
             <mat-icon>plus_one</mat-icon>
           </button>
-
         </div>
-
       </td>
     </ng-container>
 

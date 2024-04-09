@@ -30,19 +30,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAdd(){
-    this.router.navigate(['register']);
-  }
-
-  onDelete(){
-    this.deleteToggle = !this.deleteToggle
-    this.uiEffectsService.toggleDelete(this.deleteToggle)
-  }
-
-  onEdit(){
-    this.editToggle = !this.editToggle
-    this.uiEffectsService.toggleEdit(!this.editToggle)
-  }
+ 
 
   homeToggle(){
     

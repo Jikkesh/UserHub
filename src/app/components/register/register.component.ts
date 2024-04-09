@@ -95,9 +95,14 @@ export class RegisterComponent implements OnInit {
 
    if(this.edit == false) {
       this.userData = this.formData.value;
-      this.formData.reset();
-      this.router.navigate(['dashboard']) 
+
+      this.userDataService.addData(this.userData).subscribe(() => 
+        {
+          this.formData.reset(),
+          this.router.navigate(['dashboard']) 
+        })
     }
+
     else{
    
       this.userData = this.formData.value;

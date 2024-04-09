@@ -28,7 +28,7 @@ userData : UserData;
 
   this.user_id = this.activatedRoute.snapshot.params 
   this.userService.getUser(this.user_id.id).subscribe( 
-     (data) => {this.userData = data
+     (data) => { this.userData = data, console.log(this.userData)
      },
      (error) => console.log(error)
     )

@@ -36,7 +36,6 @@ export class UserDataInterceptor implements HttpInterceptor {
         }
        
       })
-      console.log(this.newReq.headers)
     } else {
       this.newReq = request
       };

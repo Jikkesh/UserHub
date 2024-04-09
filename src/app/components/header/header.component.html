@@ -5,16 +5,13 @@
     <a routerLink = "dashboard" > <h1>Dashboard</h1>  </a>
   </div>
 
-   <div> 
+
+
+  
+  <div> 
     <button mat-stroked-button *ngIf = "logged == false" routerLink = "login"> Login </button>
     <button mat-stroked-button *ngIf = "logged == true" (click) = "handleLogout()"> Logout </button>
    </div>
- 
-  <div class="btn-row" *ngIf = "homeToggle()" ActivatedRoute = "dashboard" > 
-          <button mat-raised-button color="primary" (click) = "onAdd()">Add</button>
-          <button mat-raised-button color="accent" (click) = "onEdit()">Edit</button>
-          <button mat-raised-button color="warn" (click) = "onDelete()">Delete</button>  
-  </div>
         
 </mat-card>
         

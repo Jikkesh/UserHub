@@ -12,6 +12,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { UserComponent } from './components/user/user.component';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
@@ -31,6 +32,7 @@ import {UserDataInterceptor } from './interceptors/user-data.interceptor';
 import {NotFoundComponent } from './components/not-found/not-found.component';
 import {  LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { UserService } from './components/user/user.service';
 
 
 
@@ -45,7 +47,8 @@ import { SignupComponent } from './components/auth/signup/signup.component';
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
   providers: [ 
     UserDataService, 
     UiEffectsService,
+    UserService,
     { provide : HTTP_INTERCEPTORS , useClass : UserDataInterceptor , multi : true  }
   
   ],

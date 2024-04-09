@@ -7,6 +7,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SaveGuard } from './guards/save.guard';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from  './components/auth/signup/signup.component';
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
 
@@ -17,8 +18,10 @@ pathMatch : 'full'},
 { path:'users' , 
 component: HomeComponent, 
 canActivate : [SaveGuard],
-canActivateChild : [SaveGuard],
-loadChildren : () => import('./components/user/user.module').then(m => m.default),
+},
+
+{path : 'user/:id', 
+component : UserComponent
 },
 
 { path: 'dashboard', 
@@ -41,6 +44,7 @@ component : LoginComponent
 component : SignupComponent
 
 },
+
 
 { path: '**',
 component: NotFoundComponent

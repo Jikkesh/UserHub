@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { UserData } from 'src/app/UserData';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,17 +13,12 @@ export class HomeComponent implements OnInit {
 userData : UserData[];
 loader : boolean = true;
 
-userToggle : boolean = false;
+userToggle : boolean;
 
 nameList : any[];
 
   constructor(private userDataService : UserDataService,
-              private router : Router,
-              private activatedRoute : ActivatedRoute ) { 
-
-    this.userDataService.userCompToggle().subscribe((value) => { 
-    this.userToggle = value 
-     })
+              private router : Router) { 
 
   }
 
@@ -36,13 +31,8 @@ nameList : any[];
 
   }
 
-  handleClick(user_id){
-    this.userDataService.userCompToggleSub.next(true)
-    this.router.navigate(['users', 'user' ,`${user_id}`])
-  }
-
-  handleEvent(value : any){
-   this.userToggle = value
+  handleClick(user_id : number){
+    this.router.navigate(['user' ,`${user_id}`])
   }
 
 

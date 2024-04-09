@@ -12,6 +12,7 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   margin: 20px 0;
 }
 
 .login-container{
@@ -21,3 +22,7 @@ display: flex;
 justify-content: center;
 }
 
+.link{
+  color: blue;
+  text-decoration: underline;
+}

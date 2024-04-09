@@ -87,6 +87,20 @@ export class DashboardComponent implements OnInit {
     this.userDataService.getFilteredData(this.value).subscribe((data) => this.userData = data )
    }
 
+   onAdd(){
+    this.router.navigate(['register']);
+  }
+
+  onDelete(){
+    this.deleteToggle = !this.deleteToggle
+    this.uiEffectsService.toggleDelete(this.deleteToggle)
+  }
+
+  onEdit(){
+    this.editToggle = !this.editToggle
+    this.uiEffectsService.toggleEdit(this.editToggle)
+  }
+
   
 
 }

@@ -36,7 +36,8 @@ export class UserDataService {
 
   addData(userData:UserData) : Observable <UserData> {
     this.userAddedData = userData
-    return  this.http.post<UserData>(this._url , userData);
+    console.log(this.userAddedData)
+    return this.http.post<UserData>(this._url,userData);
   }
 
   userCompToggle() : Observable<boolean> {
