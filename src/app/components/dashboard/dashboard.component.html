@@ -4,13 +4,8 @@
 
   <div class="field">
 
-    <div class="search-container">
-      <form>
-        <div class="search-box">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Search</mat-label>
-            <input matInput placeholder="Ex. India" [(ngModel)]="value" name="country">
-          </mat-form-field>
+    <form *ngIf="!loader">
+      <div class="search-box">
 
           <button mat-raised-button (click)="handleSearch()" class="search-btn">Search</button>
         </div>
@@ -24,6 +19,8 @@
     </div>
 
   </div>
+  <h2 *ngIf="!loader"> Total:  {{totalUsers}} </h2>  
+ 
 
   <table mat-table [dataSource]="userData" class="mat-elevation-z8" *ngIf="loader === false">
 

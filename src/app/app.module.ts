@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 
+
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
@@ -27,14 +28,17 @@ import {UserDataService } from './services/user-data.service';
 import {UiEffectsService } from './services/ui-effects.service';
 import {MatListModule} from '@angular/material/list';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatRippleModule} from '@angular/material/core';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+
+
 
 import {UserDataInterceptor } from './interceptors/user-data.interceptor';
 import {NotFoundComponent } from './components/not-found/not-found.component';
-import {  LoginComponent } from './components/auth/login/login.component';
+import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { UserService } from './components/user/user.service';
-
-
 
 
 
@@ -68,7 +72,11 @@ import { UserService } from './components/user/user.service';
     MatSelectModule,
     MatIconModule,
     MatListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatRippleModule,
+    MatExpansionModule
+
+
 
   ],
   providers: [ 
